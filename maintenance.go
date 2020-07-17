@@ -29,7 +29,7 @@ type Maintenance struct {
 	MaintenanceID string
 	Name          string
 	ActiveSince   time.Time
-	activeTill    time.Time
+	ActiveTill    time.Time
 	Description   string
 	// Service period in hours
 	ServicePeriod       int
@@ -144,7 +144,7 @@ func (m *MaintenanceCreateParams) FillHostIDs(session *Session) error {
 
 func (c *MaintenanceCreateParams) FillFields(Object *Maintenance) *MaintenanceCreateParams {
 	c.ActiveSince = Object.ActiveSince.Unix()
-	c.ActiveTill = Object.ActiveSince.Add(time.Hour * time.Duration(Object.ServicePeriod)).Unix()
+	c.ActiveTill = Object.ActiveTill.Unix()
 	c.Description = Object.Description
 	c.MaintenanceID = Object.MaintenanceID
 	c.Name = Object.Name

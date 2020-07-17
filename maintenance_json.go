@@ -40,7 +40,7 @@ func (c *jMaintenance) Maintenance() (result *Maintenance, err error) {
 		ActionEvalTypeAndOr: TagsEvaltype(c.MaintenanceType),
 		Type:                MaintenanceType(c.TagsEvaltype),
 		ActiveSince:         time.Unix(c.ActiveSince, 0),
-		activeTill:          time.Unix(c.ActiveTill, 0),
+		ActiveTill:          time.Unix(c.ActiveTill, 0),
 		Description:         c.Description,
 		MaintenanceID:       c.MaintenanceID,
 		Name:                c.Name,
